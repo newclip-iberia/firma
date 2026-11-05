@@ -322,6 +322,11 @@ function build(s, mode){
       `<p style="${P}">${esc(LEGAL[1])}<a href="mailto:contact@newclipiberia.com" style="color:#444444;">contact@newclipiberia.com</a>. Tienen derecho a realizar una reclamación ante las autoridades de protección de datos.</p>`+
       `</td></tr></table>`;
   }
+  /* dos líneas en blanco encima de la firma (solo en lo que se copia), para escribir el correo sin tener que pulsar Intro */
+  if(mode==="export"){
+    const blank=`<p style="${F}font-size:14px;line-height:19px;margin:0;">&nbsp;</p>`;
+    html = blank + blank + html;
+  }
   return html;
 }
 
