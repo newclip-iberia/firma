@@ -132,8 +132,8 @@ pre{font-family:ui-monospace,Menlo,monospace;font-size:.75rem;background:var(--g
     <section aria-labelledby="h-datos" class="formbox">
       <h2 id="h-datos">Tus datos<span class="dot">.</span></h2>
       <form id="f" autocomplete="on">
-        <div class="field"><label for="name">Nombre <span class="req">*</span></label><input id="name" type="text" value="" placeholder="Ej.: Laura Ejemplo Ficticia"><small>Tal como quieres que aparezca, con acentos.</small></div>
-        <div class="field"><label for="title">Cargo <span class="req">*</span></label><input id="title" type="text" value="" placeholder="Ej.: Key Account Specialist"><small>Usa la nomenclatura del leveling (p. ej. «Specialist», no «Assistant»).</small></div>
+        <div class="field"><label for="name">Nombre y apellidos <span class="req">*</span></label><input id="name" type="text" value="" placeholder="Ej.: Laura Ejemplo Ficticia"><small>Tal como quieres que aparezca, con acentos.</small></div>
+        <div class="field"><label for="title">Cargo o posición <span class="req">*</span></label><input id="title" type="text" value="" placeholder="Ej.: Key Account Specialist"><small>Usa la nomenclatura del leveling (p. ej. «Specialist», no «Assistant»).</small></div>
         <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" type="email" value="" placeholder="Ej.: nombre.apellido@newclipiberia.com"></div>
         <div class="field">
           <label class="check"><input id="showLandline" type="checkbox" checked> Incluir teléfono fijo</label>
@@ -327,8 +327,8 @@ function build(s, mode){
 
 function checks(s){
   const out=[];
-  if(!s.name) out.push(["warn","Nombre","Falta el nombre."]);
-  if(!s.title) out.push(["warn","Cargo","Falta el cargo."]);
+  if(!s.name) out.push(["warn","Nombre","Faltan el nombre y los apellidos."]);
+  if(!s.title) out.push(["warn","Cargo","Falta el cargo o la posición."]);
   if(!s.email) out.push(["warn","Email","Falta el email."]);
   if(s.email && !/@newclipiberia\.com$/i.test(s.email)) out.push(["warn","Email","No es una dirección @newclipiberia.com."]);
   if($("showLandline").checked && !s.landline) out.push(["warn","Fijo","Has marcado el teléfono fijo pero está vacío."]);
